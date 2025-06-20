@@ -26,6 +26,13 @@ btnQueryTask.classList.add('btn-query')
 
 blockQueryTask.append(queryTask, btnQueryTask);
 
+const btnAllTasks = document.createElement('button');
+btnAllTasks.textContent = 'Отобразить все задачи';
+btnAllTasks.classList.add('btn-all-tasks');
+
+const AllTasks = document.querySelector('.all-tasks');
+AllTasks.append(btnAllTasks)
+
 function createTaskManager(){
   let tasks = [];
   let nextId = 1;
@@ -98,6 +105,12 @@ function createTaskManager(){
         !getQery ? task.visual = false: task.visual = true;
       })
       manager.save();
+    },
+    getAllTasks(){
+      tasks.forEach(task => {
+        task.visual = true;
+      })
+      manager.save();
     }
   }
 }
@@ -118,4 +131,9 @@ btnQueryTask.addEventListener('click', function(){
   console.log(query)
   manager.filter(query);
   manager.render()
+})
+
+btnAllTasks.addEventListener('click', function(){
+  manager.getAllTasks();
+  manager.render();
 })

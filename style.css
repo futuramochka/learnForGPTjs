@@ -25,7 +25,8 @@ body {
 }
 
 .button-add-task,
-.btn-query {
+.btn-query,
+.btn-all-tasks {
   width: 100%;
   padding: 10px;
   margin-bottom: 20px;
@@ -38,7 +39,8 @@ body {
   transition: background-color 0.3s;
 }
 
-.btn-query{
+.btn-query,
+.btn-all-tasks{
   width: 200px;
 }
 
